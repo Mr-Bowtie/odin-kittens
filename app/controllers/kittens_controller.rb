@@ -28,6 +28,7 @@ class KittensController < ApplicationController
         format.html { redirect_to kitten_url(@kitten), notice: "Kitten was successfully created." }
         format.json { render :show, status: :created, location: @kitten }
       else
+        flash.now[:alert] = "What was that?"
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @kitten.errors, status: :unprocessable_entity }
       end

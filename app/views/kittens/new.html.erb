@@ -1,5 +1,9 @@
 <h1>New kitten</h1>
 
+<% if flash[:alert] %>
+  <p><%= flash[:alert] %></p>
+<% end %>
+
 <%= render "form", kitten: @kitten %>
 
 <br>
